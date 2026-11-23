@@ -135,7 +135,7 @@ function final(plan, outFile) {
   ].join(';');
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', path.join(BUILD, 'video_only.mp4'), '-i', path.join(BUILD, 'brand', 'endcard.png'),
     '-i', path.join(BUILD, 'brand', 'watermark.png'), '-i', path.join(BUILD, 'audio', 'mix.wav'), '-filter_complex', fc,
-    '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p', '-r', String(FPS),
+    '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-pix_fmt', 'yuv420p', '-r', String(FPS),
     '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', outFile], { stdio: 'inherit' });
   console.log('wrote', outFile);
 }
