@@ -1,0 +1,85 @@
+{
+  "_comment": "Narration for TTS. Each word pair is [caption shown on screen (romanized, from scenes.json), Telugu-script text the voice reads]. Phrases are synthesized separately; 'pause' is the silence (s) after a phrase. Scene 16 says 'debbai' (470) to match the title, callout and source; the original script said 'muppai' (430).",
+  "scenes": [
+    { "id": 1, "rate": 1.08, "phrases": [
+      { "pause": 0.12, "words": [["Godavari","గోదావరి"],["Pushkaralu","పుష్కరాలు"],["ki","కి"],["logo,","లోగో"]] },
+      { "pause": 0.25, "words": [["tagline","ట్యాగ్లైన్"],["meeru","మీరు"],["design","డిజైన్"],["cheyyandi","చేయండి"]] },
+      { "pause": 0, "words": [["gelisthe","గెలిస్తే"],["laksha","లక్ష"],["rupaayalu!","రూపాయలు"]] }
+    ]},
+    { "id": 2, "rate": 1.05, "phrases": [
+      { "pause": 0.2, "words": [["Modhati","మొదటి"],["bahumathi","బహుమతి"],["laksha,","లక్ష"]] },
+      { "pause": 0.2, "words": [["rendo","రెండో"],["bahumathi","బహుమతి"],["yabhai","యాభై"],["velu,","వేలు"]] },
+      { "pause": 0, "words": [["moodo","మూడో"],["bahumathi","బహుమతి"],["iravai","ఇరవై"],["aidu","ఐదు"],["velu.","వేలు"]] }
+    ]},
+    { "id": 3, "rate": 1.0, "phrases": [
+      { "pause": 0.25, "words": [["November","నవంబర్"],["30","ముప్పై"],["saayanthram","సాయంత్రం"],["aidu","ఐదు"],["gantala","గంటల"],["lopu,","లోపు"]] },
+      { "pause": 0, "words": [["godavaripushkaralutg","గోదావరి పుష్కరాలు టీ జీ"],["at","ఎట్"],["gmail","జీమెయిల్"],["dot","డాట్"],["com","కామ్"],["ki","కి"],["pampandi.","పంపండి"]] }
+    ]},
+    { "id": 4, "rate": 1.05, "phrases": [
+      { "pause": 0.25, "words": [["Asalu","అసలు"],["ee","ఈ"],["Pushkaralu","పుష్కరాలు"],["enti?","ఏంటి"]] },
+      { "pause": 0.25, "words": [["Enduku","ఎందుకు"],["inta","ఇంత"],["pedda","పెద్ద"],["panduga?","పండుగ"]] },
+      { "pause": 0, "words": [["Choodandi.","చూడండి"]] }
+    ]},
+    { "id": 5, "rate": 1.0, "phrases": [
+      { "pause": 0.3, "words": [["Pannendu","పన్నెండు"],["samvatsaralaku","సంవత్సరాలకు"],["okkasari","ఒక్కసారి"],["vache","వచ్చే"],["maha","మహా"],["panduga","పండుగ"]] },
+      { "pause": 0, "words": [["Godavari","గోదావరి"],["Pushkaralu.","పుష్కరాలు"]] }
+    ]},
+    { "id": 6, "rate": 1.0, "phrases": [
+      { "pause": 0.2, "words": [["Guru","గురు"],["graham","గ్రహం"],["Simha","సింహ"],["raasi","రాశి"],["loki","లోకి"],["pravesinchinappudu,","ప్రవేశించినప్పుడు"]] },
+      { "pause": 0, "words": [["Godavari","గోదావరి"],["ki","కి"],["Pushkaralu","పుష్కరాలు"],["vasthayi.","వస్తాయి"]] }
+    ]},
+    { "id": 7, "rate": 1.0, "phrases": [
+      { "pause": 0.15, "words": [["Maharashtra","మహారాష్ట్ర"],["nunchi","నుంచి"],["Telangana,","తెలంగాణ"]] },
+      { "pause": 0.3, "words": [["Andhra","ఆంధ్ర"],["meedugaa","మీదుగా"],["samudram","సముద్రం"],["varaku","వరకు"]] },
+      { "pause": 0, "words": [["dakshina","దక్షిణ"],["Ganga","గంగ"],["Godavari.","గోదావరి"]] }
+    ]},
+    { "id": 8, "rate": 1.0, "phrases": [
+      { "pause": 0.2, "words": [["Ee","ఈ"],["pannendu","పన్నెండు"],["rojullo","రోజుల్లో"],["snanam","స్నానం"],["chesthe,","చేస్తే"]] },
+      { "pause": 0, "words": [["papalu","పాపాలు"],["potayani","పోతాయని"],["nammakam.","నమ్మకం"]] }
+    ]},
+    { "id": 9, "rate": 1.0, "phrases": [
+      { "pause": 0.3, "words": [["2015","రెండు వేల పదిహేను"],["lo","లో"],["jarigindi","జరిగింది"],["Maha","మహా"],["Pushkaram","పుష్కరం"]] },
+      { "pause": 0, "words": [["144","నూట నలభై నాలుగు"],["samvatsaralaku","సంవత్సరాలకు"],["okkasari","ఒక్కసారి"],["vachedi.","వచ్చేది"]] }
+    ]},
+    { "id": 10, "rate": 1.0, "phrases": [
+      { "pause": 0, "words": [["Pannendu","పన్నెండు"],["rojullo","రోజుల్లో"],["padi","పది"],["kotla","కోట్ల"],["mandi","మంది"],["paiga","పైగా"],["snanam","స్నానం"],["chesaaru.","చేశారు"]] }
+    ]},
+    { "id": 11, "rate": 0.92, "phrases": [
+      { "pause": 0.2, "words": [["Modhati","మొదటి"],["roju","రోజు"],["Rajahmundry","రాజమండ్రి"],["lo","లో"]] },
+      { "pause": 0, "words": [["tokkisalaata","తొక్కిసలాట"],["lo","లో"],["enno","ఎన్నో"],["praanalu","ప్రాణాలు"],["poyayi.","పోయాయి"]] }
+    ]},
+    { "id": 12, "rate": 1.0, "phrases": [
+      { "pause": 0.3, "words": [["Ippudu","ఇప్పుడు"],["malli","మళ్ళీ"],["2027","రెండు వేల ఇరవై ఏడు"],["lo","లో"]] },
+      { "pause": 0, "words": [["June","జూన్"],["26","ఇరవై ఆరు"],["nunchi","నుంచి"],["July","జూలై"],["7","ఏడు"],["varaku.","వరకు"]] }
+    ]},
+    { "id": 13, "rate": 1.02, "phrases": [
+      { "pause": 0.2, "words": [["Telangana","తెలంగాణ"],["lo","లో"],["thombhai","తొంభై"],["aaru","ఆరు"],["pradesaalu,","ప్రదేశాలు"]] },
+      { "pause": 0, "words": [["enimidi","ఎనిమిది"],["kotla","కోట్ల"],["mandi","మంది"],["bhakthulu","భక్తులు"],["vasthaarani","వస్తారని"],["anchana.","అంచనా"]] }
+    ]},
+    { "id": 14, "rate": 1.0, "phrases": [
+      { "pause": 0.3, "words": [["Mana","మన"],["Dharmapuri","ధర్మపురి"],["lo","లో"],["Godavari","గోదావరి"],["Uttara","ఉత్తర"],["Vahini","వాహిని"],["ga","గా"],["pravahisthundi","ప్రవహిస్తుంది"]] },
+      { "pause": 0, "words": [["anduke","అందుకే"],["ikkada","ఇక్కడ"],["snanam","స్నానం"],["entho","ఎంతో"],["punyam.","పుణ్యం"]] }
+    ]},
+    { "id": 15, "rate": 1.0, "phrases": [
+      { "pause": 0.2, "words": [["Sri","శ్రీ"],["Lakshmi","లక్ష్మీ"],["Narasimha","నరసింహ"],["Swamy","స్వామి"],["darshanam,","దర్శనం"]] },
+      { "pause": 0.3, "words": [["Godavari","గోదావరి"],["snanam","స్నానం"]] },
+      { "pause": 0, "words": [["rendu","రెండు"],["okkachote.","ఒక్కచోటే"]] }
+    ]},
+    { "id": 16, "rate": 1.04, "phrases": [
+      { "pause": 0.2, "words": [["Dharmapuri","ధర్మపురి"],["lo","లో"],["nalugu","నాలుగు"],["vandala","వందల"],["debbai","డెబ్బై"],["metarla","మీటర్ల"],["kotha","కొత్త"],["ghatlu,","ఘాట్లు"]] },
+      { "pause": 0, "words": [["rendu","రెండు"],["vandala","వందల"],["iravai","ఇరవై"],["aaru","ఆరు"],["kotla","కోట్ల"],["panulu.","పనులు"]] }
+    ]},
+    { "id": 17, "rate": 1.0, "phrases": [
+      { "pause": 0.2, "words": [["Kumbh","కుంభ్"],["Mela","మేళా"],["laaga,","లాగా"]] },
+      { "pause": 0, "words": [["veyyi","వెయ్యి"],["kotla","కోట్ల"],["rupaayalatho","రూపాయలతో"],["pani","పని"],["modalaindi.","మొదలైంది"]] }
+    ]},
+    { "id": 18, "rate": 0.97, "phrases": [
+      { "pause": 0, "words": [["Chivari","చివరి"],["Antya","అంత్య"],["Pushkaralu","పుష్కరాలు"],["2028","రెండు వేల ఇరవై ఎనిమిది"],["July","జూలై"],["lo.","లో"]] }
+    ]},
+    { "id": 19, "rate": 1.03, "phrases": [
+      { "pause": 0.3, "words": [["Pushkaralaki","పుష్కరాలకి"],["Dharmapuri","ధర్మపురి"],["vasthunnara?","వస్తున్నారా"]] },
+      { "pause": 0.3, "words": [["Logo","లోగో"],["pampinchara?","పంపించారా"]] },
+      { "pause": 0, "words": [["Comment","కామెంట్"],["lo","లో"],["cheppandi.","చెప్పండి"]] }
+    ]}
+  ]
+}

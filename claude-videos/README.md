@@ -1,6 +1,16 @@
 # Claude Videos
 
-A curated list of videos, webinars and video courses about Claude.
+Videos made with Claude, plus a curated list of videos, webinars and video
+courses about Claude.
+
+## Made with Claude
+
+| Video | About |
+| --- | --- |
+| [Godavari Pushkaralu 2027](godavari-pushkaralu-2027/) | Telugu explainer reel (1080×1920, about 2.5 min): the Telangana logo & tagline contest, what the Pushkaralu are, and the Dharmapuri plans. Low-poly 3D, synthetic voice, word-by-word captions. |
+
+## About Claude
+
 Links are kept here instead of video files, so the repository stays small
 and the content stays with its publishers.
 

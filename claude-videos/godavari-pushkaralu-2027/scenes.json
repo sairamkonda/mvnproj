@@ -1,0 +1,226 @@
+{
+  "title": "Godavari Pushkaralu 2027",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "style": "low-poly 3D, warm golden-hour light, saffron + river-blue palette"
+  },
+  "voice": {
+    "language": "te",
+    "caption_style": "word-by-word, current word in orange, white outline"
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "tag": "Illustration",
+      "kicker": "TELANGANA ENDOWMENTS DEPT",
+      "title": "LOGO & TAGLINE CONTEST",
+      "title_te": "గోదావరి పుష్కరాల లోగో పోటీ",
+      "narration": "Godavari Pushkaralu ki logo, tagline meeru design cheyyandi - gelisthe laksha rupaayalu!",
+      "visual": "Hook shot: a blank glowing logo frame floats above the Godavari at sunrise, a pencil sketches a wave-and-diya mark inside it, gold coins burst out with Rs 1,00,000",
+      "camera": "fast push-in then settle (first 2 seconds must grab attention)",
+      "callouts": [
+        "RS 1,00,000"
+      ]
+    },
+    {
+      "id": 2,
+      "tag": "Illustration",
+      "kicker": "TOP 3 PRIZES",
+      "title": "RS 1 LAKH - 50,000 - 25,000",
+      "narration": "Modhati bahumathi laksha, rendo bahumathi yabhai velu, moodo bahumathi iravai aidu velu.",
+      "visual": "Three low-poly podium blocks (1, 2, 3) on a ghat, each with a trophy and prize amount floating above",
+      "camera": "slow lateral dolly across the podiums"
+    },
+    {
+      "id": 3,
+      "tag": "Illustration",
+      "kicker": "LAST DATE",
+      "title": "30 NOVEMBER, 5 PM",
+      "title_te": "నవంబర్ 30 సాయంత్రం 5 గంటల లోపు",
+      "narration": "November 30 saayanthram aidu gantala lopu, godavaripushkaralutg at gmail dot com ki pampandi.",
+      "visual": "Calendar prop flipping to NOVEMBER 30 (2026) with a clock showing 5:00; an envelope flies off toward an email address card",
+      "camera": "static with slight push",
+      "callouts": [
+        "godavaripushkaralutg@gmail.com"
+      ],
+      "note": "Keep the email on screen for at least 3 seconds so viewers can screenshot it"
+    },
+    {
+      "id": 4,
+      "tag": "Illustration",
+      "kicker": "",
+      "title": "ASALU PUSHKARALU ANTE?",
+      "narration": "Asalu ee Pushkaralu enti? Enduku inta pedda panduga? Choodandi.",
+      "visual": "Transition: the logo frame dissolves into the river, camera dives toward the water",
+      "camera": "fast dive into the water, cut to the next scene"
+    },
+    {
+      "id": 5,
+      "tag": "Illustration",
+      "kicker": "ONCE IN 12 YEARS",
+      "title": "GODAVARI PUSHKARALU",
+      "narration": "Pannendu samvatsaralaku okkasari vache maha panduga - Godavari Pushkaralu.",
+      "visual": "Wide sunrise shot of a low-poly river with temple gopuram on the bank, diyas floating on water",
+      "camera": "slow push-in over the water"
+    },
+    {
+      "id": 6,
+      "tag": "Illustration",
+      "kicker": "WHY 12 YEARS?",
+      "title": "JUPITER ENTERS SIMHA",
+      "narration": "Guru graham Simha raasi loki pravesinchinappudu, Godavari ki Pushkaralu vasthayi.",
+      "visual": "Stylised night sky: glowing Jupiter sphere moving along a zodiac ring into the Leo (Simha) segment",
+      "camera": "slow orbit around the zodiac ring",
+      "callouts": [
+        "JUPITER",
+        "SIMHA RAASI"
+      ]
+    },
+    {
+      "id": 7,
+      "tag": "Map: Natural Earth (public domain) - heights exaggerated",
+      "kicker": "THE RIVER",
+      "title": "DAKSHINA GANGA",
+      "narration": "Maharashtra nunchi Telangana, Andhra meedugaa samudram varaku - dakshina Ganga Godavari.",
+      "visual": "Extruded map of Maharashtra, Telangana, Andhra Pradesh; glowing blue line traces the Godavari from source to Bay of Bengal",
+      "camera": "top-down, slow tilt as the river line animates",
+      "callouts": [
+        "BASARA",
+        "DHARMAPURI",
+        "BHADRACHALAM",
+        "RAJAHMUNDRY"
+      ],
+      "note": "Make the DHARMAPURI callout slightly bigger/brighter than the others - it is the local anchor of this video"
+    },
+    {
+      "id": 8,
+      "tag": "Illustration",
+      "kicker": "THE BELIEF",
+      "title": "A HOLY DIP",
+      "narration": "Ee pannendu rojullo snanam chesthe, papalu potayani nammakam.",
+      "visual": "Devotees on ghat steps stepping into water, marigold garlands, brass lotas",
+      "camera": "low angle at water level, gentle dolly"
+    },
+    {
+      "id": 9,
+      "tag": "Recreation",
+      "kicker": "14 - 25 JULY 2015",
+      "title": "MAHA PUSHKARAM",
+      "narration": "2015 lo jarigindi Maha Pushkaram - 144 samvatsaralaku okkasari vachedi.",
+      "visual": "Calendar prop flipping to JULY 14, 2015 (make sure the calendar matches the title)",
+      "camera": "static with slight push"
+    },
+    {
+      "id": 10,
+      "tag": "Recreation",
+      "kicker": "2015",
+      "title": "OVER 10 CRORE DIPS",
+      "narration": "Pannendu rojullo padi kotla mandi paiga snanam chesaaru.",
+      "visual": "Huge instanced crowd along long river ghats, aerial view, counter ticking up to 10,00,00,000+",
+      "camera": "high aerial crane rising"
+    },
+    {
+      "id": 11,
+      "tag": "Illustration",
+      "kicker": "14 JULY 2015, RAJAHMUNDRY",
+      "title": "IN MEMORY",
+      "narration": "Modhati roju Rajahmundry lo tokkisalaata lo enno praanalu poyayi.",
+      "visual": "Respectful scene: rows of diyas on ghat steps at dusk, no people shown",
+      "camera": "slow lateral track",
+      "note": "Keep this scene calm and factual. Verify the official death toll before publishing."
+    },
+    {
+      "id": 12,
+      "tag": "Illustration",
+      "kicker": "ADI PUSHKARALU",
+      "title": "26 JUNE - 7 JULY 2027",
+      "title_te": "2027 జూన్ 26 నుంచి జూలై 7 వరకు",
+      "narration": "Ippudu malli 2027 lo - June 26 nunchi July 7 varaku.",
+      "visual": "Calendar prop flipping to JUNE 26, 2027 with marigold border",
+      "camera": "static with slight push"
+    },
+    {
+      "id": 13,
+      "tag": "Map: Natural Earth (public domain) - heights exaggerated",
+      "kicker": "TELANGANA PLAN",
+      "title": "96 LOCATIONS - 8 CRORE DEVOTEES",
+      "narration": "Telangana lo thombhai aaru pradesaalu, enimidi kotla mandi bhakthulu vasthaarani anchana.",
+      "visual": "Telangana map with the Godavari, 96 small pins popping up along the river",
+      "camera": "slow push-in"
+    },
+    {
+      "id": 14,
+      "tag": "Illustration",
+      "kicker": "JAGTIAL DISTRICT",
+      "title": "DHARMAPURI",
+      "title_te": "ధర్మపురి",
+      "narration": "Mana Dharmapuri lo Godavari Uttara Vahini ga pravahisthundi - anduke ikkada snanam entho punyam.",
+      "visual": "Low-poly Dharmapuri ghat at sunrise, river visibly bending, devotees on the steps, temple gopuram behind",
+      "camera": "slow aerial follow along the river bend, then settle on the ghat",
+      "callouts": [
+        "UTTARA VAHINI"
+      ]
+    },
+    {
+      "id": 15,
+      "tag": "Illustration",
+      "kicker": "DHARMAPURI",
+      "title": "SRI LAKSHMI NARASIMHA SWAMY",
+      "narration": "Sri Lakshmi Narasimha Swamy darshanam, Godavari snanam - rendu okkachote.",
+      "visual": "Temple gopuram and mandapam in warm lamplight, bells, marigold garlands, devotees walking up from the ghat",
+      "camera": "slow tilt up the gopuram"
+    },
+    {
+      "id": 16,
+      "tag": "Illustration",
+      "kicker": "DHARMAPURI WORKS",
+      "title": "RS 226 CRORE - 470 M NEW GHATS",
+      "narration": "Dharmapuri lo nalugu vandala muppai metarla kotha ghatlu, rendu vandala iravai aaru kotla panulu.",
+      "visual": "New ghat steps extending along the bank with a glowing measuring line labelled 470 m, cranes and workers",
+      "camera": "lateral dolly along the length of the new ghat",
+      "callouts": [
+        "470 M NEW GHATS"
+      ]
+    },
+    {
+      "id": 17,
+      "tag": "Illustration",
+      "kicker": "ON KUMBH MELA LINES",
+      "title": "RS 1,000 CRORE WORKS",
+      "narration": "Kumbh Mela laaga, veyyi kotla rupaayalatho pani modalaindi.",
+      "visual": "Construction scene: new ghat steps, cranes, barricades, CCTV poles, tent city by the river",
+      "camera": "slow dolly along the ghat"
+    },
+    {
+      "id": 18,
+      "tag": "Illustration",
+      "kicker": "2028",
+      "title": "ANTYA PUSHKARALU",
+      "narration": "Chivari Antya Pushkaralu 2028 July lo.",
+      "visual": "Same river as scene 1 but at sunset, single diya floating away",
+      "camera": "slow pull-out"
+    },
+    {
+      "id": 19,
+      "tag": "Illustration",
+      "kicker": "",
+      "title": "DHARMAPURI LO KALUDDAAM",
+      "title_te": "ధర్మపురిలో కలుద్దాం!",
+      "narration": "Pushkaralaki Dharmapuri vasthunnara? Logo pampinchara? Comment lo cheppandi.",
+      "visual": "Godavari Harathi on the Dharmapuri ghat at night, lamps raised, river glowing",
+      "camera": "slow orbit",
+      "note": "Add the contest deadline as a small lower-third: Logo contest - last date 30 Nov, 5 PM"
+    }
+  ],
+  "sources": [
+    "Deccan Chronicle / The Hans India (Nov 2026): Telangana Endowments Dept logo & tagline contest; entries Nov 21-30, 5 PM; prizes Rs 1 lakh, 50,000, 25,000; godavaripushkaralutg@gmail.com",
+    "AP government GO (Dec 2025): Godavari Pushkarams 26 June - 7 July 2027",
+    "Telangana Cabinet Sub-Committee (Mar 2026): ~8 crore devotees, 96 locations; Antya Pushkaralu 13-24 July 2028",
+    "Telangana Today (Aug 2026): Rs 1,000 crore allocated, works from September 2026",
+    "The Hans India: Telangana minister confirms 26 June - 7 July 2027; Dharmapuri works Rs 226 crore, 470 m new ghats",
+    "Deccan Chronicle: Dharmapuri sacred for Uttara Vahini; Sri Lakshmi Narasimha Swamy temple",
+    "Business Standard / Wikipedia: 2015 Maha Pushkaram, 14-25 July 2015, 10-11 crore dips"
+  ]
+}
