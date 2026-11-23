@@ -124,6 +124,22 @@ function mux(outFile) {
   console.log('wrote', outFile);
 }
 
+// Watermark on the scenes, crossfade into the end card, mux the soundtrack.
+// Needs build/brand/{watermark,endcard}.png (tools/brand.py) and a mix.wav built with OUTRO=2.2.
+function final(plan, outFile) {
+  const fade = 0.4, endDur = 2.6, off = (plan.total - fade).toFixed(3);
+  const fc = [
+    `[1:v]scale=2160:3840,zoompan=z='1+0.12*pow(1-min(on/40\\,1)\\,3)':d=${Math.round(endDur * FPS)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x1920:fps=${FPS},format=yuv420p,setsar=1,settb=AVTB[end]`,
+    `[0:v][2:v]overlay=W-w-28:106,fps=${FPS},format=yuv420p,setsar=1,settb=AVTB[main]`,
+    `[main][end]xfade=transition=fade:duration=${fade}:offset=${off}[v]`,
+  ].join(';');
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', path.join(BUILD, 'video_only.mp4'), '-i', path.join(BUILD, 'brand', 'endcard.png'),
+    '-i', path.join(BUILD, 'brand', 'watermark.png'), '-i', path.join(BUILD, 'audio', 'mix.wav'), '-filter_complex', fc,
+    '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p', '-r', String(FPS),
+    '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', outFile], { stdio: 'inherit' });
+  console.log('wrote', outFile);
+}
+
 const plan = makePlan();
 const ids = opt('scenes') ? opt('scenes').split(',').map(Number) : plan.scenes.map((s) => s.id);
 if (mode === 'stills') await stills(plan, ids, (opt('at') || '0.15,0.5,0.95').split(',').map(Number));
@@ -135,3 +151,7 @@ if (mode === 'video' || mode === 'all') {
   }
 }
 if (mode === 'mux') { concat(plan); mux(path.join(ROOT, opt('out', 'godavari-pushkaralu-2027.mp4'))); }
+if (mode === 'final' || ((mode === 'video' || mode === 'all') && !opt('scenes') && fs.existsSync(path.join(BUILD, 'brand', 'endcard.png')))) {
+  if (mode === 'final') concat(plan);
+  final(plan, path.join(ROOT, opt('out', 'godavari-pushkaralu-2027.mp4')));
+}

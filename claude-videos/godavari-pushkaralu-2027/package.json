@@ -7,9 +7,10 @@
     "render": "node render.mjs video --workers 3"
   },
   "dependencies": {
-    "three": "0.170.0",
-    "@fontsource/noto-sans-telugu": "5.1.0",
     "@fontsource/anton": "5.1.0",
-    "@fontsource/inter": "5.1.0"
+    "@fontsource/inter": "5.1.0",
+    "@fontsource/noto-sans-telugu": "5.1.0",
+    "@fontsource/ramabhadra": "^5.3.0",
+    "three": "0.170.0"
   }
 }

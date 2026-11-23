@@ -40,7 +40,8 @@ window.api = {
     const get = (p) => fetch(p).then((r) => r.json());
     [data.spec, data.timeline, data.plan, data.map] = await Promise.all([get('/scenes.json'), get('/build/timeline.json'), get('/build/plan.json'), get('/data/map.json')]);
     await Promise.all(['400 40px Anton', '600 20px Inter', '700 20px Inter', '800 20px Inter', '700 40px "Noto Sans Telugu"']
-      .map((f) => document.fonts.load(f, f.includes('Telugu') ? 'తెలుగు' : 'Aa')));
+      .concat(['400 40px Ramabhadra']).map((f) => document.fonts.load(f, /Telugu|Ramabhadra/.test(f) ? 'తెలుగు Aa' : 'Aa')));
+    await document.fonts.load('400 40px Ramabhadra', 'Aa');
     return data.plan.scenes.map((s) => s.id);
   },
   setScene(id) {

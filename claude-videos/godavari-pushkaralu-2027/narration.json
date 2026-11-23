@@ -1,5 +1,7 @@
 {
   "_comment": "Narration for TTS. Each word pair is [caption shown on screen (romanized, from scenes.json), Telugu-script text the voice reads]. Phrases are synthesized separately; 'pause' is the silence (s) after a phrase. Scene 16 says 'debbai' (470) to match the title, callout and source; the original script said 'muppai' (430).",
+  "_captions": "On-screen captions use the Telugu text (Ramabhadra font). Words listed in keep_english, numbers and the email address stay in English letters.",
+  "keep_english": ["logo", "tagline", "design", "november", "june", "july", "comment", "godavaripushkaralutg", "at", "gmail", "dot", "com"],
   "scenes": [
     { "id": 1, "rate": 1.08, "phrases": [
       { "pause": 0.12, "words": [["Godavari","గోదావరి"],["Pushkaralu","పుష్కరాలు"],["ki","కి"],["logo,","లోగో"]] },

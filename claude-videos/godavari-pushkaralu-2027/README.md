@@ -9,10 +9,11 @@ word-by-word captions, rendered from the storyboard in [`scenes.json`](scenes.js
 | --- | --- |
 | Visuals | Low-poly 3D built in code with three.js, rendered headless in Chromium |
 | Voice | Meta MMS-TTS Telugu (`facebook/mms-tts-tel`), a synthetic voice |
-| Captions | Romanized narration from `scenes.json`, current word in orange with a white outline |
+| Captions | Telugu script in Ramabhadra, word by word, current word in orange with a white outline. Numbers, the email address and a few English words (logo, tagline, design, month names, comment) stay in English letters; the list is `keep_english` in `narration.json` |
 | Music and effects | Synthesized in [`tools/mix.py`](tools/mix.py): tanpura drone, temple bells, drum pulse, whooshes |
 | Map data | [Natural Earth](https://www.naturalearthdata.com/) 1:10m (public domain), simplified in `data/map.json` |
-| Fonts | Anton, Inter, Noto Sans Telugu (SIL Open Font License, via Fontsource) |
+| Fonts | Ramabhadra for Telugu text; Anton and Inter for English titles and labels (all SIL Open Font License, via Fontsource) |
+| Branding | The Ramu Swift Facts logo (`assets/`) as a corner badge on every scene and a 2-second end card |
 
 ## Check before publishing
 
@@ -34,8 +35,9 @@ npm install                      # three.js and fonts
 pip install torch transformers scipy numpy
 python tools/tts.py              # narration + word timings -> build/
 node render.mjs stills --scenes 1,7 --at 0.2,0.9   # preview frames -> build/stills/
-python tools/mix.py              # soundtrack -> build/audio/mix.wav
-node render.mjs video --workers 3                  # full render + mux
+python tools/brand.py            # logo badge + end card -> build/brand/
+OUTRO=2.2 python tools/mix.py    # soundtrack incl. end card -> build/audio/mix.wav
+node render.mjs video --workers 3                  # full render, watermark, end card, mux
 ```
 
 `render.mjs` serves `web/` locally, drives `window.api.frame(t)` in headless

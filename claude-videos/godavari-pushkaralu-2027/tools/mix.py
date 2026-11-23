@@ -18,7 +18,8 @@ SR = 48000
 plan = json.load(open(os.path.join(B, "plan.json")))
 tl = {s["id"]: s for s in json.load(open(os.path.join(B, "timeline.json")))["scenes"]}
 P = {s["id"]: s for s in plan["scenes"]}
-N = int((plan["total"] + 0.5) * SR)
+OUTRO = float(os.environ.get("OUTRO", "2.2"))  # end card after the last scene (see render.mjs final)
+N = int((plan["total"] + OUTRO + 0.3) * SR)
 rng = np.random.default_rng(7)
 
 voice = np.zeros(N)
@@ -81,7 +82,7 @@ strings = [(SA * 0.75, -0.3), (SA, 0.2), (SA, -0.1), (SA / 2, 0.3)]
 cache = {f: pluck(f) for f, _ in strings}
 t = 0.0
 k = 0
-while t < plan["total"]:
+while t < plan["total"] + OUTRO:
     f, pan = strings[k % 4]
     add(music, cache[f], t, pan=pan, gain=0.55)
     t += 1.15
@@ -191,6 +192,9 @@ add(sfx, whoosh(0.8), S(7), gain=0.5)
 add(sfx, whoosh(0.8), S(14), gain=0.5)
 for i in range(3):
     add(sfx, bell(440 + i * 70, 4), S(19) + 0.2 + i * 1.6, gain=0.45)
+if OUTRO > 0:
+    add(sfx, bell(587, 4), plan["total"] - 0.35, gain=0.55)
+    add(sfx, coins(0.9), plan["total"] - 0.3, gain=0.35)
 
 # ---- music level per scene (quieter for the memorial and the sunset) ----
 lvl = np.ones(N)

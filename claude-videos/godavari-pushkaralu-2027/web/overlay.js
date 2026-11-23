@@ -3,8 +3,8 @@
 import { W, H, clamp, ease, seg, roundRect } from './kit.js';
 
 const ORANGE = '#ff8a1a', SAFFRON = '#ff9933', DEEP = '#f57c00', INK = 'rgba(14,18,38,0.92)', GOLD = '#ffd27a';
-const CAP_FONT = (s) => `800 ${s}px Inter`;
-const CAP_SIZE = 66, CAP_Y = 1445, CAP_MAX_W = 940;
+const CAP_FONT = (s) => `${s}px Ramabhadra, Inter`;
+const CAP_SIZE = 70, CAP_Y = 1445, CAP_MAX_W = 940;
 
 function fitFont(ctx, text, font, max, start, min) {
   let s = start;
@@ -24,7 +24,7 @@ export class Overlay {
 
   setScene(spec, words, lead, extras = {}) {
     this.spec = spec; this.extras = extras; this.lead = lead;
-    this.words = words.map((w) => ({ ...w, start: w.start + lead, end: w.end + lead }));
+    this.words = words.map((w) => ({ ...w, text: w.show ?? w.text, start: w.start + lead, end: w.end + lead }));
     this.layoutTitle();
     this.layoutCaptions();
   }
@@ -52,7 +52,7 @@ export class Overlay {
 
   layoutCaptions() {
     const ctx = this.ctx; ctx.font = CAP_FONT(CAP_SIZE);
-    const space = ctx.measureText(' ').width;
+    const space = ctx.measureText(' ').width + 18;
     const chunks = []; let cur = [];
     const width = (ws) => ws.reduce((s, w) => s + ctx.measureText(w.text).width, 0) + space * (ws.length - 1);
     this.words.forEach((w, i) => {
@@ -152,8 +152,8 @@ export class Overlay {
     if (sp.title_te) {
       const a = ease.out(seg(t, 0.4, 0.8));
       ctx.globalAlpha = a;
-      const s = fitFont(ctx, sp.title_te, (s) => `700 ${s}px "Noto Sans Telugu"`, 980, 58, 34);
-      ctx.font = `700 ${s}px "Noto Sans Telugu"`;
+      const s = fitFont(ctx, sp.title_te, (s) => `${s}px Ramabhadra`, 980, 60, 34);
+      ctx.font = `${s}px Ramabhadra`;
       ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 14;
       strokeFill(ctx, sp.title_te, W / 2, y + s * 0.7 + 12 * (1 - a), GOLD, 'rgba(20,16,40,0.85)', 9);
     }

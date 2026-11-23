@@ -10,6 +10,7 @@ Writes:
 """
 import json
 import os
+import re
 import sys
 
 import numpy as np
@@ -58,8 +59,18 @@ def synth(text, rate, seed):
     return wav, words
 
 
+def caption(cap, te, keep):
+    """Text shown on screen: Telugu script, except numbers and listed English words."""
+    m = re.match(r"^(.*?)([,.?!]*)$", cap)
+    core, punct = m.group(1), m.group(2)
+    if re.search(r"\d", core) or core.lower() in keep:
+        return cap
+    return te + punct
+
+
 def main():
     narr = json.load(open(os.path.join(ROOT, "narration.json")))
+    keep = set(narr.get("keep_english", []))
     timeline = {"sample_rate": SR, "scenes": []}
     for sc in narr["scenes"]:
         sid = sc["id"]
@@ -73,7 +84,7 @@ def main():
             for cap, te in ph["words"]:
                 n = len(te.split())
                 s, e = tw[k][0], tw[k + n - 1][1]
-                cap_words.append({"text": cap, "start": round(t + s, 3), "end": round(t + e, 3)})
+                cap_words.append({"text": cap, "show": caption(cap, te, keep), "start": round(t + s, 3), "end": round(t + e, 3)})
                 k += n
             pieces.append(wav)
             t += len(wav) / SR
