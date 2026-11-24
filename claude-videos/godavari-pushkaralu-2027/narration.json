@@ -5,7 +5,7 @@
   "scenes": [
     { "id": 1, "rate": 1.08, "phrases": [
       { "pause": 0.12, "words": [["Godavari","గోదావరి"],["Pushkaralu","పుష్కరాలు"],["ki","కి"],["logo,","లోగో"]] },
-      { "pause": 0.25, "words": [["tagline","ట్యాగ్లైన్"],["meeru","మీరు"],["design","డిజైన్"],["cheyyandi","చేయండి"]] },
+      { "pause": 0.25, "words": [["tagline","ట్యాగ్లైన్"],["meeru","మీరు"],["design","డిజైన్"],["chesthe","చేస్తే"]] },
       { "pause": 0, "words": [["gelisthe","గెలిస్తే"],["laksha","లక్ష"],["rupaayalu!","రూపాయలు"]] }
     ]},
     { "id": 2, "rate": 1.05, "phrases": [
