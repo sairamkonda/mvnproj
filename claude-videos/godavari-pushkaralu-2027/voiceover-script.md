@@ -1,6 +1,6 @@
 # Voice-over script — Godavari Pushkaralu 2027
 
-Timed to [`godavari-pushkaralu-2027.mp4`](godavari-pushkaralu-2027.mp4) (2:25.1 with the end card). Each scene's line has to be spoken inside its window, because the captions and a few animations are timed to it.
+Timed to [`godavari-pushkaralu-2027.mp4`](godavari-pushkaralu-2027.mp4) (2:24.7 with the end card). Each scene's line has to be spoken inside its window, because the captions and a few animations are timed to it.
 
 ## How to record it in HeyGen
 
@@ -39,7 +39,7 @@ The email address is spelled for speaking: గోదావరి పుష్క
 | 16 | RS 226 CRORE - 470 M NEW GHATS | 1:53.2 | 2:01.7 | 8.2 s | 8.4 s |
 | 17 | RS 1,000 CRORE WORKS | 2:02.1 | 2:07.1 | 4.7 s | 5.0 s |
 | 18 | ANTYA PUSHKARALU | 2:07.5 | 2:13.7 | 5.9 s | 6.1 s |
-| 19 | DHARMAPURI LO KALUDDAAM | 2:14.1 | 2:22.8 | 7.2 s | 8.6 s |
+| 19 | DHARMAPURI LO KALUDDAAM | 2:14.1 | 2:22.4 | 6.8 s | 8.2 s |
 
 ## Scene by scene
 
@@ -227,11 +227,11 @@ Sync points:
 
 ### 19. DHARMAPURI LO KALUDDAAM
 
-**Scene** 2:13.8–2:22.9 · **Speak** from 2:14.1 · **Target** 7.2 s · **Max** 8.6 s
+**Scene** 2:13.8–2:22.5 · **Speak** from 2:14.1 · **Target** 6.8 s · **Max** 8.2 s
 
-> పుష్కరాలకి ధర్మపురి వస్తున్నారా? లోగో పంపించారా? కామెంట్ లో చెప్పండి.
+> మీరు మీ లైఫ్ లో ఒక్కసారైనా పుష్కరాలకి వెళ్ళారా? కామెంట్స్ లో పెట్టండి.
 
-*Pushkaralaki Dharmapuri vasthunnara? Logo pampinchara? Comment lo cheppandi.*
+*Meeru mee life lo okkasaraina Pushkaralaki vellara? Comments lo pettandi.*
 
 ## Changed from the storyboard
 

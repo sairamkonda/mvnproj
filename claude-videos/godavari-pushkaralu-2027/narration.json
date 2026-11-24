@@ -1,7 +1,7 @@
 {
   "_comment": "Narration for TTS. Each word pair is [caption shown on screen (romanized, from scenes.json), Telugu-script text the voice reads]. Phrases are synthesized separately; 'pause' is the silence (s) after a phrase. Scene 16 says 'debbai' (470) to match the title, callout and source; the original script said 'muppai' (430).",
   "_captions": "On-screen captions use the Telugu text (Ramabhadra font). Words listed in keep_english, numbers and the email address stay in English letters.",
-  "keep_english": ["logo", "tagline", "design", "november", "june", "july", "comment", "godavaripushkaralutg", "at", "gmail", "dot", "com"],
+  "keep_english": ["logo", "tagline", "design", "november", "june", "july", "comment", "comments", "life", "godavaripushkaralutg", "at", "gmail", "dot", "com"],
   "scenes": [
     { "id": 1, "rate": 1.08, "phrases": [
       { "pause": 0.12, "words": [["Godavari","గోదావరి"],["Pushkaralu","పుష్కరాలు"],["ki","కి"],["logo,","లోగో"]] },
@@ -79,9 +79,8 @@
       { "pause": 0, "words": [["Chivari","చివరి"],["Antya","అంత్య"],["Pushkaralu","పుష్కరాలు"],["2028","రెండు వేల ఇరవై ఎనిమిది"],["July","జూలై"],["lo.","లో"]] }
     ]},
     { "id": 19, "rate": 1.03, "phrases": [
-      { "pause": 0.3, "words": [["Pushkaralaki","పుష్కరాలకి"],["Dharmapuri","ధర్మపురి"],["vasthunnara?","వస్తున్నారా"]] },
-      { "pause": 0.3, "words": [["Logo","లోగో"],["pampinchara?","పంపించారా"]] },
-      { "pause": 0, "words": [["Comment","కామెంట్"],["lo","లో"],["cheppandi.","చెప్పండి"]] }
+      { "pause": 0.3, "words": [["Meeru","మీరు"],["mee","మీ"],["life","లైఫ్"],["lo","లో"],["okkasaraina","ఒక్కసారైనా"],["Pushkaralaki","పుష్కరాలకి"],["vellara?","వెళ్ళారా"]] },
+      { "pause": 0, "words": [["Comments","కామెంట్స్"],["lo","లో"],["pettandi.","పెట్టండి"]] }
     ]}
   ]
 }
