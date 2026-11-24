@@ -1,6 +1,6 @@
 # Godavari Pushkaralu 2027 — explainer reel
 
-A 1080×1920, 30 fps vertical video (about 2 min 23 s) with Telugu narration and
+A 1080×1920, 30 fps vertical video with Telugu narration in the creator's own (cloned) voice and
 word-by-word captions, rendered from the storyboard in [`scenes.json`](scenes.json).
 
 **Output:** [`godavari-pushkaralu-2027.mp4`](godavari-pushkaralu-2027.mp4)
@@ -8,7 +8,7 @@ word-by-word captions, rendered from the storyboard in [`scenes.json`](scenes.js
 | | |
 | --- | --- |
 | Visuals | Low-poly 3D built in code with three.js, rendered headless in Chromium |
-| Voice | Meta MMS-TTS Telugu (`facebook/mms-tts-tel`), a synthetic voice |
+| Voice | The creator's own voice, cloned from a short sample with AI4Bharat [IndicF5](https://huggingface.co/ai4bharat/IndicF5) (MIT) in [`tools/voice_clone.py`](tools/voice_clone.py). Word timings for the captions come from pauses in the speech and word lengths. The earlier synthetic voice (Meta MMS-TTS, CC-BY-NC) is still made by `tools/tts.py`. |
 | Captions | Telugu script in Ramabhadra, word by word, current word in orange with a white outline. Numbers, the email address and a few English words (logo, tagline, design, month names, comment) stay in English letters; the list is `keep_english` in `narration.json` |
 | Music and effects | Synthesized in [`tools/mix.py`](tools/mix.py): tanpura drone, temple bells, drum pulse, whooshes |
 | Map data | [Natural Earth](https://www.naturalearthdata.com/) 1:10m (public domain), simplified in `data/map.json` |
@@ -22,11 +22,10 @@ word-by-word captions, rendered from the storyboard in [`scenes.json`](scenes.js
   *debbai* (470) to match. Change it in `narration.json` if 430 was intended.
 - **Scene 11:** no death toll appears on screen. The storyboard note asks to verify
   the official figure before publishing if one is added.
-- **Voice licence:** MMS-TTS is CC-BY-NC 4.0 (non-commercial). For a paid or
-  sponsored post, re-record the narration. The word timings in
-  `build/timeline.json` show the pacing to match.
-- The voice is synthetic. Telugu speakers should listen for pronunciation,
-  especially English words (logo, tagline, design, gmail) and numbers.
+- **Voice:** AI-generated from the creator's sample. Listen through for
+  mispronunciations, especially English words (logo, tagline, design, gmail)
+  and numbers, and for words the captions highlight early or late.
+- **Voice samples** are personal data and are not stored in this repository.
 
 ## Re-recording the voice
 
@@ -40,7 +39,9 @@ cues. Record one clip per scene and lay them over the music-and-effects-only ver
 ```bash
 npm install                      # three.js and fonts
 pip install torch transformers scipy numpy
-python tools/tts.py              # narration + word timings -> build/
+python tools/tts.py              # synthetic narration + word timings -> build/ (or, for a cloned voice:)
+INDICF5_DIR=<IndicF5 snapshot> python tools/voice_clone.py --ref sample.wav --ref-text "<exact words>"
+#   then copy build/audio_clone/* over build/audio/ and build/audio_clone/timeline.json to build/timeline.json
 node render.mjs stills --scenes 1,7 --at 0.2,0.9   # preview frames -> build/stills/
 python tools/brand.py            # logo badge + end card -> build/brand/
 OUTRO=2.2 python tools/mix.py    # soundtrack incl. end card -> build/audio/mix.wav

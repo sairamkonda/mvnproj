@@ -23,7 +23,10 @@ function makePlan() {
   const scenes = tl.scenes.map((s) => {
     const lead = s.id === 1 ? 0.15 : 0.3;
     const tail = s.id === 19 ? 1.6 : s.id === 4 ? 0.25 : 0.4;
-    const frames = Math.round((lead + s.speech + tail) * FPS);
+    // keep short scenes readable, and the email in scene 3 on screen for 3.5 s (it appears 0.55 s after its first word)
+    let minDur = 3.2;
+    if (s.id === 3 && s.words[6]) minDur = lead + s.words[6].start + 0.55 + 3.5;
+    const frames = Math.round(Math.max(lead + s.speech + tail, minDur) * FPS);
     const e = { id: s.id, lead, dur: frames / FPS, frames, start };
     start += e.dur;
     return e;
