@@ -7,7 +7,7 @@ courses about Claude.
 
 | Video | About |
 | --- | --- |
-| [Godavari Pushkaralu 2027](godavari-pushkaralu-2027/) | Telugu explainer reel (1080×1920, 2 min 8 s), narrated in the creator's own cloned voice: the Telangana logo & tagline contest, what the Pushkaralu are, and the Dharmapuri plans. Low-poly 3D, word-by-word Telugu captions. |
+| [Godavari Pushkaralu 2027](godavari-pushkaralu-2027/) | Telugu explainer reel (1080×1920, 1 min 36 s), narrated in the creator's own cloned voice: the Telangana logo & tagline contest, what the Pushkaralu are, and the Dharmapuri plans. Low-poly 3D, word-by-word Telugu captions. |
 
 ## About Claude
 
