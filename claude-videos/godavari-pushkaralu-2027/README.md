@@ -28,6 +28,13 @@ word-by-word captions, rendered from the storyboard in [`scenes.json`](scenes.js
 - The voice is synthetic. Telugu speakers should listen for pronunciation,
   especially English words (logo, tagline, design, gmail) and numbers.
 
+## Re-recording the voice
+
+[`voiceover-script.md`](voiceover-script.md) has the narration line for every scene with its time
+window and sync points; [`voiceover-cues.srt`](voiceover-cues.srt) has the same windows as subtitle
+cues. Record one clip per scene and lay them over the music-and-effects-only version
+(`OUTRO=2.2 VOICE=0 python tools/mix.py`, then swap that audio onto the video).
+
 ## Rebuild
 
 ```bash

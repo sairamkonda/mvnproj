@@ -221,7 +221,15 @@ env = moving_avg(np.abs(voice), win)
 duck = moving_avg(1 - 0.62 * np.clip(env / (env.max() * 0.25 + 1e-9), 0, 1), win)
 
 music_gain = 0.22
-mix = music * (music_gain * lvl * duck)[:, None] + sfx * 0.5 + np.stack([voice, voice], 1) * 0.95
-mix /= max(1e-9, np.abs(mix).max()) / 0.89
-wavfile.write(os.path.join(B, "audio", "mix.wav"), SR, (mix * 32767).astype(np.int16))
-print(f"mix.wav: {N / SR:.2f} s")
+voice_st = np.stack([voice, voice], 1) * 0.95
+mix = music * (music_gain * lvl * duck)[:, None] + sfx * 0.5 + voice_st
+norm = 0.89 / max(1e-9, np.abs(mix).max())
+# VOICE=0 writes the same mix without the narration (same levels and ducking),
+# as a bed for recording the voice elsewhere.
+WITH_VOICE = os.environ.get("VOICE", "1") != "0"
+if not WITH_VOICE:
+    mix = mix - voice_st
+mix *= norm
+name = "mix.wav" if WITH_VOICE else "mix_no_voice.wav"
+wavfile.write(os.path.join(B, "audio", name), SR, (mix * 32767).astype(np.int16))
+print(f"{name}: {N / SR:.2f} s")
