@@ -158,13 +158,25 @@ def stretch(wav, tempo):
         return sf.read(o, dtype="float32")[0]
 
 
-def make_checker():
-    """Transcribe a clip with Whisper and flag the known failure modes:
-    the sample's last words ('...cheyadaniki vastaru') leaking in, and loops."""
+def make_checker(ref_path, tail_secs=2.0):
+    """Flag clips where the reference sample's last words leak into the new line (IndicF5's
+    known failure). Main test: the sound of the sample's last ~2 s is searched for anywhere in the
+    clip (MFCC subsequence DTW; a clean clip scores about 4, a leak about 3.4 or lower, the sample
+    against itself 0.8). Second test: Whisper hearing the sample's words ('...cheyadaniki')."""
     import difflib
+    import librosa
     from scipy.signal import resample_poly
     from transformers import pipeline
     asr = pipeline("automatic-speech-recognition", model="openai/whisper-small", device="cpu")
+
+    def feats(x):
+        m = librosa.feature.mfcc(y=x, sr=SR, n_mfcc=20, hop_length=240, n_fft=1024)[1:]
+        return (m - m.mean(1, keepdims=True)) / (m.std(1, keepdims=True) + 1e-6)
+
+    ref, _ = sf.read(ref_path, dtype="float32")
+    spans = speech_spans(ref)
+    end = spans[-1][1]
+    query = feats(ref[int(max(0, end - tail_secs) * SR): int(end * SR)])
 
     def to_telugu(s):  # Whisper often writes Telugu in Devanagari; the two blocks share a layout
         s = s.replace("\u093c", "")
@@ -174,18 +186,18 @@ def make_checker():
         return "".join(c for c in s if 0x0C15 <= ord(c) <= 0x0C39)
 
     def check(wav, expected):
+        D, _ = librosa.sequence.dtw(X=query, Y=feats(wav), subseq=True, metric="euclidean")
+        cost = float(D[-1].min() / query.shape[1])
         x = resample_poly(wav, 16000, SR)
-        heard = to_telugu(asr({"raw": x, "sampling_rate": 16000}, generate_kwargs={"language": "telugu", "task": "transcribe"})["text"])
+        heard = to_telugu(asr({"raw": x, "sampling_rate": 16000},
+                              generate_kwargs={"language": "telugu", "task": "transcribe", "no_repeat_ngram_size": 3})["text"])
         problems = []
+        if cost < 3.85:
+            problems.append(f"sounds like the sample's ending ({cost:.2f})")
         if re.search(r"చే.?య?డా?ని|డానికి|చెయ్య?డా", heard):
-            problems.append("sample words leaked in")
-        toks = heard.split()
-        if any(toks[i] == toks[i + 1] == toks[i + 2] for i in range(len(toks) - 2)):
-            problems.append("loop")
+            problems.append("Whisper hears the sample's words")
         score = difflib.SequenceMatcher(None, skeleton(heard), skeleton(expected)).ratio()
-        if score < 0.35:
-            problems.append("does not match the line")
-        return problems, heard, score
+        return problems, f"dtw {cost:.2f} | {heard}", score
 
     return check
 
@@ -209,7 +221,7 @@ def main():
     # Use the reference as given (it should end with ~0.4 s of silence). The default preprocessing strips
     # that silence, and without it the model tends to carry the sample's last words into the new line.
     ref_audio, ref_text = a.ref, a.ref_text.strip() + " "
-    check = None if a.no_check else make_checker()
+    check = None if a.no_check else make_checker(a.ref)
     tl_path = os.path.join(a.out, "timeline.json")
     timeline = json.load(open(tl_path)) if os.path.exists(tl_path) else {"sample_rate": SR, "scenes": []}
     want = {int(x) for x in a.scenes.split(",") if x}
