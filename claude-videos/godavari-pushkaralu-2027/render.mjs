@@ -3,7 +3,7 @@ import { createRequire } from 'module';
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
-import { spawn, execFileSync } from 'child_process';
+import { spawn, spawnSync, execFileSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const require = createRequire(import.meta.url);
@@ -129,18 +129,36 @@ function mux(outFile) {
 
 // Watermark on the scenes, crossfade into the end card, mux the soundtrack.
 // Needs build/brand/{watermark,endcard}.png (tools/brand.py) and a mix.wav built with OUTRO=2.2.
+// Measure the soundtrack and return a loudnorm filter that brings it to -14 LUFS (typical for Reels/Shorts).
+function loudness(wav) {
+  const r = spawnSync('ffmpeg', ['-hide_banner', '-i', wav, '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json', '-f', 'null', '-'], { encoding: 'utf8' });
+  const m = JSON.parse(r.stderr.slice(r.stderr.lastIndexOf('{')));
+  const filter = `loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`;
+  return { filter, gain: -14 - Number(m.input_i) };
+}
+
 function final(plan, outFile) {
   const fade = 0.4, endDur = 2.6, off = (plan.total - fade).toFixed(3);
+  const ln = loudness(path.join(BUILD, 'audio', 'mix.wav'));
   const fc = [
     `[1:v]scale=2160:3840,zoompan=z='1+0.12*pow(1-min(on/40\\,1)\\,3)':d=${Math.round(endDur * FPS)}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1080x1920:fps=${FPS},format=yuv420p,setsar=1,settb=AVTB[end]`,
     `[0:v][2:v]overlay=W-w-28:106,fps=${FPS},format=yuv420p,setsar=1,settb=AVTB[main]`,
     `[main][end]xfade=transition=fade:duration=${fade}:offset=${off}[v]`,
+    `[3:a]${ln.filter},aresample=48000[a]`,
   ].join(';');
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', path.join(BUILD, 'video_only.mp4'), '-i', path.join(BUILD, 'brand', 'endcard.png'),
     '-i', path.join(BUILD, 'brand', 'watermark.png'), '-i', path.join(BUILD, 'audio', 'mix.wav'), '-filter_complex', fc,
-    '-map', '[v]', '-map', '3:a', '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-pix_fmt', 'yuv420p', '-r', String(FPS),
+    '-map', '[v]', '-map', '[a]', '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-pix_fmt', 'yuv420p', '-r', String(FPS),
     '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', outFile], { stdio: 'inherit' });
-  console.log('wrote', outFile);
+  console.log('wrote', outFile, `(audio ${ln.gain >= 0 ? '+' : ''}${ln.gain.toFixed(1)} dB to -14 LUFS)`);
+  // music-and-effects-only copy at the same gain, as a bed for re-recording the voice
+  const bed = path.join(BUILD, 'audio', 'mix_no_voice.wav');
+  if (fs.existsSync(bed)) {
+    const nv = outFile.replace(/\.mp4$/, '-no-voice.mp4').replace(ROOT, BUILD);
+    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', outFile, '-i', bed, '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
+      '-af', `volume=${ln.gain.toFixed(2)}dB,alimiter=limit=0.84`, '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', nv], { stdio: 'inherit' });
+    console.log('wrote', nv);
+  }
 }
 
 const plan = makePlan();
