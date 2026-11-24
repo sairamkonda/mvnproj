@@ -147,6 +147,25 @@ def word_times(wav, phrases):
     return out, t0, t1
 
 
+def tighten(wav, max_pause, keep=0.18):
+    """Shorten long pauses inside the speech, leaving a natural breath, so lines flow."""
+    spans = speech_spans(wav, min_gap=0.0)
+    out, fade = [], int(0.01 * SR)
+    for i, (s0, s1) in enumerate(spans):
+        a = int(s0 * SR) if i else 0
+        b = int(s1 * SR)
+        out.append(wav[a:b])
+        if i + 1 < len(spans):
+            gap = spans[i + 1][0] - s1
+            g = wav[b: int(spans[i + 1][0] * SR)]
+            if gap > max_pause:
+                n = int(keep * SR)
+                g = np.concatenate([g[: n // 2], g[-(n - n // 2):]])
+            out.append(g)
+    out.append(wav[int(spans[-1][1] * SR):])
+    return np.concatenate(out)
+
+
 def stretch(wav, tempo):
     """Pitch-preserving time-stretch with ffmpeg's rubberband filter."""
     import subprocess
@@ -210,6 +229,7 @@ def main():
     ap.add_argument("--nfe", type=int, default=32)
     ap.add_argument("--speed", type=float, default=1.0, help="model speed; keep 1.0 (slower makes it pad with the sample's last words)")
     ap.add_argument("--tempo", type=float, default=1.0, help="pitch-preserving time-stretch afterwards, e.g. 0.87 = 13%% slower")
+    ap.add_argument("--max-pause", type=float, default=0.0, help="shorten pauses inside a line longer than this (s) to 0.18 s; 0 = off")
     ap.add_argument("--tries", type=int, default=5, help="attempts per scene when the check finds a repeat")
     ap.add_argument("--no-check", action="store_true", help="skip the Whisper check")
     ap.add_argument("--out", default=os.path.join(ROOT, "build", "audio_clone"))
@@ -237,6 +257,8 @@ def main():
                 wav, sr, _ = U.infer_process(ref_audio, ref_text, text, model, voc, mel_spec_type="vocos",
                                              speed=a.speed, nfe_step=a.nfe, device="cpu", show_info=lambda *x: None)
             wav = np.asarray(wav, dtype=np.float32)
+            if a.max_pause:
+                wav = tighten(wav, a.max_pause)
             if a.tempo != 1.0:
                 wav = stretch(wav, a.tempo)
             if check is None:
