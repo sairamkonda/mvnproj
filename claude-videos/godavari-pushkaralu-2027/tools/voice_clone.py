@@ -147,21 +147,69 @@ def word_times(wav, phrases):
     return out, t0, t1
 
 
+def stretch(wav, tempo):
+    """Pitch-preserving time-stretch with ffmpeg's rubberband filter."""
+    import subprocess
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        i, o = os.path.join(d, "i.wav"), os.path.join(d, "o.wav")
+        sf.write(i, wav, SR)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", i, "-af", f"rubberband=tempo={tempo}:pitchq=quality", o], check=True)
+        return sf.read(o, dtype="float32")[0]
+
+
+def make_checker():
+    """Transcribe a clip with Whisper and flag the known failure modes:
+    the sample's last words ('...cheyadaniki vastaru') leaking in, and loops."""
+    import difflib
+    from scipy.signal import resample_poly
+    from transformers import pipeline
+    asr = pipeline("automatic-speech-recognition", model="openai/whisper-small", device="cpu")
+
+    def to_telugu(s):  # Whisper often writes Telugu in Devanagari; the two blocks share a layout
+        s = s.replace("\u093c", "")
+        return "".join(chr(ord(c) + 0x300) if 0x0900 <= ord(c) <= 0x097F else c for c in s)
+
+    def skeleton(s):  # consonants only, so spelling noise matters less
+        return "".join(c for c in s if 0x0C15 <= ord(c) <= 0x0C39)
+
+    def check(wav, expected):
+        x = resample_poly(wav, 16000, SR)
+        heard = to_telugu(asr({"raw": x, "sampling_rate": 16000}, generate_kwargs={"language": "telugu", "task": "transcribe"})["text"])
+        problems = []
+        if re.search(r"చే.?య?డా?ని|డానికి|చెయ్య?డా", heard):
+            problems.append("sample words leaked in")
+        toks = heard.split()
+        if any(toks[i] == toks[i + 1] == toks[i + 2] for i in range(len(toks) - 2)):
+            problems.append("loop")
+        score = difflib.SequenceMatcher(None, skeleton(heard), skeleton(expected)).ratio()
+        if score < 0.35:
+            problems.append("does not match the line")
+        return problems, heard, score
+
+    return check
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ref", required=True)
     ap.add_argument("--ref-text", required=True)
     ap.add_argument("--scenes", default="")
     ap.add_argument("--nfe", type=int, default=32)
-    ap.add_argument("--speed", type=float, default=1.0)
+    ap.add_argument("--speed", type=float, default=1.0, help="model speed; keep 1.0 (slower makes it pad with the sample's last words)")
+    ap.add_argument("--tempo", type=float, default=1.0, help="pitch-preserving time-stretch afterwards, e.g. 0.87 = 13%% slower")
+    ap.add_argument("--tries", type=int, default=5, help="attempts per scene when the check finds a repeat")
+    ap.add_argument("--no-check", action="store_true", help="skip the Whisper check")
     ap.add_argument("--out", default=os.path.join(ROOT, "build", "audio_clone"))
     a = ap.parse_args()
-    torch.manual_seed(7)
     os.makedirs(a.out, exist_ok=True)
     narr = json.load(open(os.path.join(ROOT, "narration.json")))
     keep = set(narr.get("keep_english", []))
     model, voc = load_models()
-    ref_audio, ref_text = U.preprocess_ref_audio_text(a.ref, a.ref_text, show_info=lambda *x: None)
+    # Use the reference as given (it should end with ~0.4 s of silence). The default preprocessing strips
+    # that silence, and without it the model tends to carry the sample's last words into the new line.
+    ref_audio, ref_text = a.ref, a.ref_text.strip() + " "
+    check = None if a.no_check else make_checker()
     tl_path = os.path.join(a.out, "timeline.json")
     timeline = json.load(open(tl_path)) if os.path.exists(tl_path) else {"sample_rate": SR, "scenes": []}
     want = {int(x) for x in a.scenes.split(",") if x}
@@ -170,10 +218,25 @@ def main():
             continue
         text, phrases = scene_text(sc)
         t = time.time()
-        with torch.inference_mode(), torch.autocast("cpu", dtype=torch.bfloat16):
-            wav, sr, _ = U.infer_process(ref_audio, ref_text, text, model, voc, mel_spec_type="vocos",
-                                         speed=a.speed, nfe_step=a.nfe, device="cpu", show_info=lambda *x: None)
-        wav = np.asarray(wav, dtype=np.float32)
+        best = None
+        for attempt in range(a.tries):
+            torch.manual_seed(1000 * sc["id"] + attempt)
+            with torch.inference_mode(), torch.autocast("cpu", dtype=torch.bfloat16):
+                wav, sr, _ = U.infer_process(ref_audio, ref_text, text, model, voc, mel_spec_type="vocos",
+                                             speed=a.speed, nfe_step=a.nfe, device="cpu", show_info=lambda *x: None)
+            wav = np.asarray(wav, dtype=np.float32)
+            if a.tempo != 1.0:
+                wav = stretch(wav, a.tempo)
+            if check is None:
+                best = (0, wav, "")
+                break
+            problems, heard, score = check(wav, text)
+            print(f"   scene {sc['id']} try {attempt + 1}: {'OK' if not problems else ', '.join(problems)} | sim {score:.2f} | {heard[:70]}", flush=True)
+            if best is None or (len(problems), -score) < (best[0], -best[3]):
+                best = (len(problems), wav, heard, score)
+            if not problems:
+                break
+        wav = best[1]
         words, s0, s1 = word_times(wav, phrases)
         pad = int(0.03 * SR)
         clip = wav[max(0, int(s0 * SR) - pad): int(s1 * SR) + pad]
@@ -187,7 +250,8 @@ def main():
             {"id": sc["id"], "speech": round(len(clip) / SR, 3), "words": words}]
         timeline["scenes"].sort(key=lambda s: s["id"])
         json.dump(timeline, open(tl_path, "w"), ensure_ascii=False, indent=1)
-        print(f"scene {sc['id']:2d}: {len(clip) / SR:5.2f}s speech, {time.time() - t:5.1f}s to generate", flush=True)
+        flag = "" if best[0] == 0 else "  <-- still flagged, listen to this one"
+        print(f"scene {sc['id']:2d}: {len(clip) / SR:5.2f}s speech, {time.time() - t:5.1f}s to generate{flag}", flush=True)
 
 
 if __name__ == "__main__":
