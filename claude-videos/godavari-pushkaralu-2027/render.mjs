@@ -21,8 +21,9 @@ function makePlan() {
   const tl = JSON.parse(fs.readFileSync(path.join(BUILD, 'timeline.json'), 'utf8'));
   let start = 0;
   const scenes = tl.scenes.map((s) => {
-    const lead = s.id === 1 ? 0.15 : 0.3;
-    const tail = s.id === 19 ? 1.6 : s.id === 4 ? 0.25 : 0.4;
+    // short gaps between scenes so the narration flows from one to the next
+    const lead = s.id === 1 ? 0.15 : 0.2;
+    const tail = s.id === 19 ? 1.6 : 0.22;
     // keep short scenes readable, and the email in scene 3 on screen for 3.5 s (it appears 0.55 s after its first word)
     let minDur = 3.2;
     if (s.id === 3 && s.words[6]) minDur = lead + s.words[6].start + 0.55 + 3.5;

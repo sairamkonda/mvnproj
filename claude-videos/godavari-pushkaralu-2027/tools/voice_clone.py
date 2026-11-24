@@ -229,7 +229,8 @@ def main():
     ap.add_argument("--nfe", type=int, default=32)
     ap.add_argument("--speed", type=float, default=1.0, help="model speed; keep 1.0 (slower makes it pad with the sample's last words)")
     ap.add_argument("--tempo", type=float, default=1.0, help="pitch-preserving time-stretch afterwards, e.g. 0.87 = 13%% slower")
-    ap.add_argument("--max-pause", type=float, default=0.0, help="shorten pauses inside a line longer than this (s) to 0.18 s; 0 = off")
+    ap.add_argument("--max-pause", type=float, default=0.0, help="shorten pauses inside a line longer than this (s); 0 = off")
+    ap.add_argument("--pause-keep", type=float, default=0.18, help="length a shortened pause is cut to (s)")
     ap.add_argument("--tries", type=int, default=5, help="attempts per scene when the check finds a repeat")
     ap.add_argument("--no-check", action="store_true", help="skip the Whisper check")
     ap.add_argument("--out", default=os.path.join(ROOT, "build", "audio_clone"))
@@ -258,7 +259,7 @@ def main():
                                              speed=a.speed, nfe_step=a.nfe, device="cpu", show_info=lambda *x: None)
             wav = np.asarray(wav, dtype=np.float32)
             if a.max_pause:
-                wav = tighten(wav, a.max_pause)
+                wav = tighten(wav, a.max_pause, a.pause_keep)
             if a.tempo != 1.0:
                 wav = stretch(wav, a.tempo)
             if check is None:
