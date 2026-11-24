@@ -1,6 +1,6 @@
 # Voice-over script — Godavari Pushkaralu 2027
 
-Timed to [`godavari-pushkaralu-2027.mp4`](godavari-pushkaralu-2027.mp4) (2:07.8 with the end card). Each scene's line has to be spoken inside its window, because the captions and a few animations are timed to it.
+Timed to [`godavari-pushkaralu-2027.mp4`](godavari-pushkaralu-2027.mp4) (1:36.1 with the end card). Each scene's line has to be spoken inside its window, because the captions and a few animations are timed to it.
 
 ## How to record it in HeyGen
 
@@ -21,78 +21,78 @@ The email address is spelled for speaking: గోదావరి పుష్క
 
 | # | Scene | Start | End | Target | Max |
 | --- | --- | --- | --- | --- | --- |
-| 1 | LOGO & TAGLINE CONTEST | 0:00.1 | 0:07.3 | 6.9 s | 7.2 s |
-| 2 | RS 1 LAKH - 50,000 - 25,000 | 0:07.8 | 0:13.9 | 5.8 s | 6.1 s |
-| 3 | 30 NOVEMBER, 5 PM | 0:14.3 | 0:22.7 | 8.1 s | 8.3 s |
-| 4 | ASALU PUSHKARALU ANTE? | 0:23.1 | 0:27.7 | 4.4 s | 4.5 s |
-| 5 | GODAVARI PUSHKARALU | 0:28.1 | 0:33.9 | 5.5 s | 5.8 s |
-| 6 | JUPITER ENTERS SIMHA | 0:34.3 | 0:41.0 | 6.4 s | 6.6 s |
-| 7 | DAKSHINA GANGA | 0:41.4 | 0:48.1 | 6.4 s | 6.6 s |
-| 8 | A HOLY DIP | 0:48.5 | 0:53.1 | 4.3 s | 4.5 s |
-| 9 | MAHA PUSHKARAM | 0:53.5 | 1:01.5 | 7.7 s | 8.0 s |
-| 10 | OVER 10 CRORE DIPS | 1:02.0 | 1:06.1 | 3.9 s | 4.1 s |
-| 11 | IN MEMORY | 1:06.5 | 1:11.8 | 5.1 s | 5.3 s |
-| 12 | 26 JUNE - 7 JULY 2027 | 1:12.3 | 1:18.6 | 6.0 s | 6.3 s |
-| 13 | 96 LOCATIONS - 8 CRORE DEVOTEES | 1:19.0 | 1:25.5 | 6.3 s | 6.5 s |
-| 14 | DHARMAPURI | 1:26.0 | 1:33.6 | 7.3 s | 7.6 s |
-| 15 | SRI LAKSHMI NARASIMHA SWAMY | 1:34.0 | 1:39.9 | 5.6 s | 5.8 s |
-| 16 | RS 226 CRORE - 470 M NEW GHATS | 1:40.3 | 1:48.1 | 7.5 s | 7.8 s |
-| 17 | RS 1,000 CRORE WORKS | 1:48.6 | 1:53.3 | 4.5 s | 4.7 s |
-| 18 | ANTYA PUSHKARALU | 1:53.7 | 1:58.2 | 4.2 s | 4.4 s |
-| 19 | DHARMAPURI LO KALUDDAAM | 1:58.6 | 2:05.5 | 5.4 s | 6.9 s |
+| 1 | LOGO & TAGLINE CONTEST | 0:00.1 | 0:04.9 | 4.7 s | 4.8 s |
+| 2 | RS 1 LAKH - 50,000 - 25,000 | 0:05.3 | 0:09.9 | 4.5 s | 4.6 s |
+| 3 | 30 NOVEMBER, 5 PM | 0:10.2 | 0:18.1 | 6.1 s | 7.8 s |
+| 4 | ASALU PUSHKARALU ANTE? | 0:18.4 | 0:21.8 | 3.3 s | 3.4 s |
+| 5 | GODAVARI PUSHKARALU | 0:22.1 | 0:26.4 | 4.2 s | 4.2 s |
+| 6 | JUPITER ENTERS SIMHA | 0:26.7 | 0:31.5 | 4.7 s | 4.8 s |
+| 7 | DAKSHINA GANGA | 0:31.9 | 0:36.8 | 4.8 s | 4.9 s |
+| 8 | A HOLY DIP | 0:37.1 | 0:40.4 | 3.2 s | 3.3 s |
+| 9 | MAHA PUSHKARAM | 0:40.7 | 0:46.4 | 5.6 s | 5.6 s |
+| 10 | OVER 10 CRORE DIPS | 0:46.7 | 0:49.9 | 3.1 s | 3.1 s |
+| 11 | IN MEMORY | 0:50.2 | 0:54.0 | 3.8 s | 3.8 s |
+| 12 | 26 JUNE - 7 JULY 2027 | 0:54.4 | 0:58.9 | 4.5 s | 4.5 s |
+| 13 | 96 LOCATIONS - 8 CRORE DEVOTEES | 0:59.3 | 1:03.8 | 4.5 s | 4.5 s |
+| 14 | DHARMAPURI | 1:04.2 | 1:09.6 | 5.4 s | 5.5 s |
+| 15 | SRI LAKSHMI NARASIMHA SWAMY | 1:10.0 | 1:14.2 | 4.2 s | 4.2 s |
+| 16 | RS 226 CRORE - 470 M NEW GHATS | 1:14.6 | 1:20.0 | 5.3 s | 5.4 s |
+| 17 | RS 1,000 CRORE WORKS | 1:20.3 | 1:23.8 | 3.3 s | 3.4 s |
+| 18 | ANTYA PUSHKARALU | 1:24.1 | 1:27.7 | 3.5 s | 3.6 s |
+| 19 | DHARMAPURI LO KALUDDAAM | 1:28.1 | 1:33.8 | 4.3 s | 5.7 s |
 
 ## Scene by scene
 
 ### 1. LOGO & TAGLINE CONTEST
 
-**Scene** 0:00.0–0:07.5 · **Speak** from 0:00.1 · **Target** 6.9 s · **Max** 7.2 s · *energetic hook — first 2 seconds matter*
+**Scene** 0:00.0–0:05.1 · **Speak** from 0:00.1 · **Target** 4.7 s · **Max** 4.8 s · *energetic hook — first 2 seconds matter*
 
-> గోదావరి పుష్కరాలు కి లోగో, ట్యాగ్‌లైన్ మీరు డిజైన్ చేయండి — గెలిస్తే లక్ష రూపాయలు!
+> గోదావరి పుష్కరాలు కి లోగో, ట్యాగ్‌లైన్ మీరు డిజైన్ చేస్తే — గెలిస్తే లక్ష రూపాయలు!
 
-*Godavari Pushkaralu ki logo, tagline meeru design cheyyandi — gelisthe laksha rupaayalu!*
+*Godavari Pushkaralu ki logo, tagline meeru design chesthe — gelisthe laksha rupaayalu!*
 
 Sync points:
-- “cheyyandi” at 0:05.0 — the pencil finishes the wave-and-diya sketch
-- “gelisthe” at 0:05.5 — gold coins burst, RS 1,00,000 badge pops
+- “chesthe” at 0:03.5 — the pencil finishes the wave-and-diya sketch
+- “gelisthe” at 0:03.5 — gold coins burst, RS 1,00,000 badge pops
 
 ### 2. RS 1 LAKH - 50,000 - 25,000
 
-**Scene** 0:07.5–0:14.0 · **Speak** from 0:07.8 · **Target** 5.8 s · **Max** 6.1 s
+**Scene** 0:05.1–0:10.0 · **Speak** from 0:05.3 · **Target** 4.5 s · **Max** 4.6 s
 
 > మొదటి బహుమతి లక్ష, రెండో బహుమతి యాభై వేలు, మూడో బహుమతి ఇరవై ఐదు వేలు.
 
 *Modhati bahumathi laksha, rendo bahumathi yabhai velu, moodo bahumathi iravai aidu velu.*
 
 Sync points:
-- “laksha” at 0:08.7 — RS 1,00,000 appears over podium 1
-- “yabhai” at 0:10.5 — RS 50,000 appears over podium 2
-- “iravai” at 0:12.6 — RS 25,000 appears over podium 3
+- “laksha” at 0:06.1 — RS 1,00,000 appears over podium 1
+- “yabhai” at 0:07.5 — RS 50,000 appears over podium 2
+- “iravai” at 0:08.9 — RS 25,000 appears over podium 3
 
 ### 3. 30 NOVEMBER, 5 PM
 
-**Scene** 0:14.0–0:22.8 · **Speak** from 0:14.3 · **Target** 8.1 s · **Max** 8.3 s
+**Scene** 0:10.0–0:18.2 · **Speak** from 0:10.2 · **Target** 6.1 s · **Max** 7.8 s
 
 > నవంబర్ ముప్పై సాయంత్రం ఐదు గంటల లోపు, గోదావరి పుష్కరాలు టీ జీ ఎట్ జీమెయిల్ డాట్ కామ్ కి పంపండి.
 
 *November 30 saayanthram aidu gantala lopu, godavaripushkaralutg at gmail dot com ki pampandi.*
 
 Sync points:
-- “godavaripushkaralutg” at 0:17.9 — envelope flies down; the email card appears 0.5 s later and stays to the end
+- “godavaripushkaralutg” at 0:14.2 — envelope flies down; the email card appears 0.5 s later and stays to the end
 
 ### 4. ASALU PUSHKARALU ANTE?
 
-**Scene** 0:22.8–0:27.8 · **Speak** from 0:23.1 · **Target** 4.4 s · **Max** 4.5 s
+**Scene** 0:18.2–0:21.9 · **Speak** from 0:18.4 · **Target** 3.3 s · **Max** 3.4 s
 
 > అసలు ఈ పుష్కరాలు ఏంటి? ఎందుకు ఇంత పెద్ద పండుగ? చూడండి.
 
 *Asalu ee Pushkaralu enti? Enduku inta pedda panduga? Choodandi.*
 
 Sync points:
-- “Choodandi” at 0:27.1 — camera dives into the river (starts 0.35 s before this word)
+- “Choodandi” at 0:21.2 — camera dives into the river (starts 0.35 s before this word)
 
 ### 5. GODAVARI PUSHKARALU
 
-**Scene** 0:27.8–0:34.0 · **Speak** from 0:28.1 · **Target** 5.5 s · **Max** 5.8 s
+**Scene** 0:21.9–0:26.5 · **Speak** from 0:22.1 · **Target** 4.2 s · **Max** 4.2 s
 
 > పన్నెండు సంవత్సరాలకు ఒక్కసారి వచ్చే మహా పండుగ — గోదావరి పుష్కరాలు.
 
@@ -100,41 +100,41 @@ Sync points:
 
 ### 6. JUPITER ENTERS SIMHA
 
-**Scene** 0:34.0–0:41.1 · **Speak** from 0:34.3 · **Target** 6.4 s · **Max** 6.6 s
+**Scene** 0:26.5–0:31.7 · **Speak** from 0:26.7 · **Target** 4.7 s · **Max** 4.8 s
 
 > గురు గ్రహం సింహ రాశి లోకి ప్రవేశించినప్పుడు, గోదావరి కి పుష్కరాలు వస్తాయి.
 
 *Guru graham Simha raasi loki pravesinchinappudu, Godavari ki Pushkaralu vasthayi.*
 
 Sync points:
-- “Simha” at 0:35.3 — SIMHA RAASI label appears
-- “pravesinchinappudu” at 0:38.0 — Jupiter settles into Simha and the sector lights up
+- “Simha” at 0:27.5 — SIMHA RAASI label appears
+- “pravesinchinappudu” at 0:29.5 — Jupiter settles into Simha and the sector lights up
 
 ### 7. DAKSHINA GANGA
 
-**Scene** 0:41.1–0:48.2 · **Speak** from 0:41.4 · **Target** 6.4 s · **Max** 6.6 s
+**Scene** 0:31.7–0:36.9 · **Speak** from 0:31.9 · **Target** 4.8 s · **Max** 4.9 s
 
 > మహారాష్ట్ర నుంచి తెలంగాణ, ఆంధ్ర మీదుగా సముద్రం వరకు — దక్షిణ గంగ గోదావరి.
 
 *Maharashtra nunchi Telangana, Andhra meedugaa samudram varaku — dakshina Ganga Godavari.*
 
 Sync points:
-- “varaku” at 0:45.9 — the glowing river reaches the sea (city pins pop as it passes)
+- “varaku” at 0:35.4 — the glowing river reaches the sea (city pins pop as it passes)
 
 ### 8. A HOLY DIP
 
-**Scene** 0:48.2–0:53.2 · **Speak** from 0:48.5 · **Target** 4.3 s · **Max** 4.5 s
+**Scene** 0:36.9–0:40.5 · **Speak** from 0:37.1 · **Target** 3.2 s · **Max** 3.3 s
 
 > ఈ పన్నెండు రోజుల్లో స్నానం చేస్తే, పాపాలు పోతాయని నమ్మకం.
 
 *Ee pannendu rojullo snanam chesthe, papalu potayani nammakam.*
 
 Sync points:
-- “chesthe” at 0:50.2 — the woman in the river takes her dip
+- “chesthe” at 0:38.6 — the woman in the river takes her dip
 
 ### 9. MAHA PUSHKARAM
 
-**Scene** 0:53.2–1:01.7 · **Speak** from 0:53.5 · **Target** 7.7 s · **Max** 8.0 s
+**Scene** 0:40.5–0:46.5 · **Speak** from 0:40.7 · **Target** 5.6 s · **Max** 5.6 s
 
 > రెండు వేల పదిహేను లో జరిగింది మహా పుష్కరం — నూట నలభై నాలుగు సంవత్సరాలకు ఒక్కసారి వచ్చేది.
 
@@ -142,18 +142,18 @@ Sync points:
 
 ### 10. OVER 10 CRORE DIPS
 
-**Scene** 1:01.7–1:06.2 · **Speak** from 1:02.0 · **Target** 3.9 s · **Max** 4.1 s
+**Scene** 0:46.5–0:50.0 · **Speak** from 0:46.7 · **Target** 3.1 s · **Max** 3.1 s
 
 > పన్నెండు రోజుల్లో పది కోట్ల మంది పైగా స్నానం చేశారు.
 
 *Pannendu rojullo padi kotla mandi paiga snanam chesaaru.*
 
 Sync points:
-- “mandi” at 1:04.4 — the counter reaches 10,00,00,000+
+- “mandi” at 0:48.7 — the counter reaches 10,00,00,000+
 
 ### 11. IN MEMORY
 
-**Scene** 1:06.2–1:12.0 · **Speak** from 1:06.5 · **Target** 5.1 s · **Max** 5.3 s · *calm, respectful tone*
+**Scene** 0:50.0–0:54.2 · **Speak** from 0:50.2 · **Target** 3.8 s · **Max** 3.8 s · *calm, respectful tone*
 
 > మొదటి రోజు రాజమండ్రి లో — తొక్కిసలాట లో ఎన్నో ప్రాణాలు పోయాయి.
 
@@ -161,7 +161,7 @@ Sync points:
 
 ### 12. 26 JUNE - 7 JULY 2027
 
-**Scene** 1:12.0–1:18.7 · **Speak** from 1:12.3 · **Target** 6.0 s · **Max** 6.3 s
+**Scene** 0:54.2–0:59.1 · **Speak** from 0:54.4 · **Target** 4.5 s · **Max** 4.5 s
 
 > ఇప్పుడు మళ్ళీ రెండు వేల ఇరవై ఏడు లో — జూన్ ఇరవై ఆరు నుంచి జూలై ఏడు వరకు.
 
@@ -169,30 +169,30 @@ Sync points:
 
 ### 13. 96 LOCATIONS - 8 CRORE DEVOTEES
 
-**Scene** 1:18.7–1:25.7 · **Speak** from 1:19.0 · **Target** 6.3 s · **Max** 6.5 s
+**Scene** 0:59.1–1:04.0 · **Speak** from 0:59.3 · **Target** 4.5 s · **Max** 4.5 s
 
 > తెలంగాణ లో తొంభై ఆరు ప్రదేశాలు, ఎనిమిది కోట్ల మంది భక్తులు వస్తారని అంచనా.
 
 *Telangana lo thombhai aaru pradesaalu, enimidi kotla mandi bhakthulu vasthaarani anchana.*
 
 Sync points:
-- “pradesaalu” at 1:21.7 — the last of the 96 pins pops
-- “enimidi” at 1:22.6 — devotee lights start moving toward the river
+- “pradesaalu” at 1:02.5 — the last of the 96 pins pops
+- “enimidi” at 1:02.6 — devotee lights start moving toward the river
 
 ### 14. DHARMAPURI
 
-**Scene** 1:25.7–1:33.7 · **Speak** from 1:26.0 · **Target** 7.3 s · **Max** 7.6 s
+**Scene** 1:04.0–1:09.8 · **Speak** from 1:04.2 · **Target** 5.4 s · **Max** 5.5 s
 
 > మన ధర్మపురి లో గోదావరి ఉత్తర వాహిని గా ప్రవహిస్తుంది — అందుకే ఇక్కడ స్నానం ఎంతో పుణ్యం.
 
 *Mana Dharmapuri lo Godavari Uttara Vahini ga pravahisthundi — anduke ikkada snanam entho punyam.*
 
 Sync points:
-- “Uttara” at 1:27.8 — UTTARA VAHINI label appears
+- “Uttara” at 1:05.7 — UTTARA VAHINI label appears
 
 ### 15. SRI LAKSHMI NARASIMHA SWAMY
 
-**Scene** 1:33.7–1:40.0 · **Speak** from 1:34.0 · **Target** 5.6 s · **Max** 5.8 s
+**Scene** 1:09.8–1:14.4 · **Speak** from 1:10.0 · **Target** 4.2 s · **Max** 4.2 s
 
 > శ్రీ లక్ష్మీ నరసింహ స్వామి దర్శనం, గోదావరి స్నానం — రెండు ఒక్కచోటే.
 
@@ -200,18 +200,18 @@ Sync points:
 
 ### 16. RS 226 CRORE - 470 M NEW GHATS
 
-**Scene** 1:40.0–1:48.3 · **Speak** from 1:40.3 · **Target** 7.5 s · **Max** 7.8 s
+**Scene** 1:14.4–1:20.1 · **Speak** from 1:14.6 · **Target** 5.3 s · **Max** 5.4 s
 
 > ధర్మపురి లో నాలుగు వందల డెబ్బై మీటర్ల కొత్త ఘాట్లు, రెండు వందల ఇరవై ఆరు కోట్ల పనులు.
 
 *Dharmapuri lo nalugu vandala debbai metarla kotha ghatlu, rendu vandala iravai aaru kotla panulu.*
 
 Sync points:
-- “debbai” at 1:42.3 — 470 M NEW GHATS label appears
+- “debbai” at 1:16.2 — 470 M NEW GHATS label appears
 
 ### 17. RS 1,000 CRORE WORKS
 
-**Scene** 1:48.3–1:53.4 · **Speak** from 1:48.6 · **Target** 4.5 s · **Max** 4.7 s
+**Scene** 1:20.1–1:23.9 · **Speak** from 1:20.3 · **Target** 3.3 s · **Max** 3.4 s
 
 > కుంభ్ మేళా లాగా, వెయ్యి కోట్ల రూపాయలతో పని మొదలైంది.
 
@@ -219,7 +219,7 @@ Sync points:
 
 ### 18. ANTYA PUSHKARALU
 
-**Scene** 1:53.4–1:58.3 · **Speak** from 1:53.7 · **Target** 4.2 s · **Max** 4.4 s
+**Scene** 1:23.9–1:27.9 · **Speak** from 1:24.1 · **Target** 3.5 s · **Max** 3.6 s
 
 > చివరి అంత్య పుష్కరాలు రెండు వేల ఇరవై ఎనిమిది జూలై లో.
 
@@ -227,7 +227,7 @@ Sync points:
 
 ### 19. DHARMAPURI LO KALUDDAAM
 
-**Scene** 1:58.3–2:05.6 · **Speak** from 1:58.6 · **Target** 5.4 s · **Max** 6.9 s
+**Scene** 1:27.9–1:33.9 · **Speak** from 1:28.1 · **Target** 4.3 s · **Max** 5.7 s
 
 > మీరు మీ లైఫ్ లో ఒక్కసారైనా పుష్కరాలకి వెళ్ళారా? కామెంట్స్ లో పెట్టండి.
 
