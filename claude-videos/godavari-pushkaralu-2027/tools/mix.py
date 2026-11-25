@@ -199,6 +199,8 @@ if OUTRO > 0:
 # ---- music level per scene (quieter for the memorial and the sunset) ----
 lvl = np.ones(N)
 for sid, g in {11: 0.45, 18: 0.7}.items():
+    if sid not in P:
+        continue
     s = P[sid]
     a, b = at(s["start"]), at(s["start"] + s["dur"])
     ramp = int(0.4 * SR)

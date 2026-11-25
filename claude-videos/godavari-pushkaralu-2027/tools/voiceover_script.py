@@ -28,7 +28,7 @@ SYNC = {
     8: [(4, False, "the woman in the river takes her dip")],
     10: [(4, True, "the counter reaches 10,00,00,000+")],
     13: [(4, True, "the last of the 96 pins pops"), (5, False, "devotee lights start moving toward the river")],
-    14: [(4, False, "UTTARA VAHINI label appears")],
+    14: [(4, False, "DAKSHINA VAHINI label appears")],
     16: [(4, False, "470 M NEW GHATS label appears")],
 }
 

@@ -108,9 +108,10 @@
       "tag": "Recreation",
       "kicker": "14 - 25 JULY 2015",
       "title": "MAHA PUSHKARAM",
-      "narration": "2015 lo jarigindi Maha Pushkaram - 144 samvatsaralaku okkasari vachedi.",
+      "narration": "2015 lo jarigindi Maha Pushkaram - 144 samvatsaralaku okkasari vasthundani nammakam.",
       "visual": "Calendar prop flipping to JULY 14, 2015 (make sure the calendar matches the title)",
-      "camera": "static with slight push"
+      "camera": "static with slight push",
+      "note": "The 144-year 'Maha Pushkaram' status is a belief disputed by some almanac writers, so the line says it is believed."
     },
     {
       "id": 10,
@@ -120,16 +121,6 @@
       "narration": "Pannendu rojullo padi kotla mandi paiga snanam chesaaru.",
       "visual": "Huge instanced crowd along long river ghats, aerial view, counter ticking up to 10,00,00,000+",
       "camera": "high aerial crane rising"
-    },
-    {
-      "id": 11,
-      "tag": "Illustration",
-      "kicker": "14 JULY 2015, RAJAHMUNDRY",
-      "title": "IN MEMORY",
-      "narration": "Modhati roju Rajahmundry lo tokkisalaata lo enno praanalu poyayi.",
-      "visual": "Respectful scene: rows of diyas on ghat steps at dusk, no people shown",
-      "camera": "slow lateral track",
-      "note": "Keep this scene calm and factual. Verify the official death toll before publishing."
     },
     {
       "id": 12,
@@ -156,11 +147,11 @@
       "kicker": "JAGTIAL DISTRICT",
       "title": "DHARMAPURI",
       "title_te": "ధర్మపురి",
-      "narration": "Mana Dharmapuri lo Godavari Uttara Vahini ga pravahisthundi - anduke ikkada snanam entho punyam.",
-      "visual": "Low-poly Dharmapuri ghat at sunrise, river visibly bending, devotees on the steps, temple gopuram behind",
+      "narration": "Mana Dharmapuri lo Godavari Dakshina Vahini ga pravahisthundi - anduke ikkada snanam entho punyam.",
+      "visual": "Low-poly Dharmapuri ghat at sunrise, river visibly bending, devotees on the steps, temple gopuram behind; the river turns to flow south (toward the viewer) at the ghat",
       "camera": "slow aerial follow along the river bend, then settle on the ghat",
       "callouts": [
-        "UTTARA VAHINI"
+        "DAKSHINA VAHINI"
       ]
     },
     {
@@ -220,7 +211,10 @@
     "Telangana Cabinet Sub-Committee (Mar 2026): ~8 crore devotees, 96 locations; Antya Pushkaralu 13-24 July 2028",
     "Telangana Today (Aug 2026): Rs 1,000 crore allocated, works from September 2026",
     "The Hans India: Telangana minister confirms 26 June - 7 July 2027; Dharmapuri works Rs 226 crore, 470 m new ghats",
-    "Deccan Chronicle: Dharmapuri sacred for Uttara Vahini; Sri Lakshmi Narasimha Swamy temple",
-    "Business Standard / Wikipedia: 2015 Maha Pushkaram, 14-25 July 2015, 10-11 crore dips"
+    "Wikipedia (Dharmapuri, Telangana) and Natural Earth river course: the Godavari flows north to south at Dharmapuri, so it is Dakshina Vahini; Sri Lakshmi Narasimha Swamy temple",
+    "Business Standard / Wikipedia: 2015 Maha Pushkaram, 14-25 July 2015, 10-11 crore dips; the 144-year Maha Pushkaram status is disputed"
+  ],
+  "removed": [
+    "Scene 11 (2015 Rajahmundry stampede, 'In memory') removed at the creator's request."
   ]
 }

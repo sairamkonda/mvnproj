@@ -41,14 +41,10 @@
     ]},
     { "id": 9, "rate": 1.0, "phrases": [
       { "pause": 0.3, "words": [["2015","రెండు వేల పదిహేను"],["lo","లో"],["jarigindi","జరిగింది"],["Maha","మహా"],["Pushkaram","పుష్కరం"]] },
-      { "pause": 0, "words": [["144","నూట నలభై నాలుగు"],["samvatsaralaku","సంవత్సరాలకు"],["okkasari","ఒక్కసారి"],["vachedi.","వచ్చేది"]] }
+      { "pause": 0, "words": [["144","నూట నలభై నాలుగు"],["samvatsaralaku","సంవత్సరాలకు"],["okkasari","ఒక్కసారి"],["vasthundani","వస్తుందని"],["nammakam.","నమ్మకం"]] }
     ]},
     { "id": 10, "rate": 1.0, "phrases": [
       { "pause": 0, "words": [["Pannendu","పన్నెండు"],["rojullo","రోజుల్లో"],["padi","పది"],["kotla","కోట్ల"],["mandi","మంది"],["paiga","పైగా"],["snanam","స్నానం"],["chesaaru.","చేశారు"]] }
-    ]},
-    { "id": 11, "rate": 0.92, "phrases": [
-      { "pause": 0.2, "words": [["Modhati","మొదటి"],["roju","రోజు"],["Rajahmundry","రాజమండ్రి"],["lo","లో"]] },
-      { "pause": 0, "words": [["tokkisalaata","తొక్కిసలాట"],["lo","లో"],["enno","ఎన్నో"],["praanalu","ప్రాణాలు"],["poyayi.","పోయాయి"]] }
     ]},
     { "id": 12, "rate": 1.0, "phrases": [
       { "pause": 0.3, "words": [["Ippudu","ఇప్పుడు"],["malli","మళ్ళీ"],["2027","రెండు వేల ఇరవై ఏడు"],["lo","లో"]] },
@@ -59,7 +55,7 @@
       { "pause": 0, "words": [["enimidi","ఎనిమిది"],["kotla","కోట్ల"],["mandi","మంది"],["bhakthulu","భక్తులు"],["vasthaarani","వస్తారని"],["anchana.","అంచనా"]] }
     ]},
     { "id": 14, "rate": 1.0, "phrases": [
-      { "pause": 0.3, "words": [["Mana","మన"],["Dharmapuri","ధర్మపురి"],["lo","లో"],["Godavari","గోదావరి"],["Uttara","ఉత్తర"],["Vahini","వాహిని"],["ga","గా"],["pravahisthundi","ప్రవహిస్తుంది"]] },
+      { "pause": 0.3, "words": [["Mana","మన"],["Dharmapuri","ధర్మపురి"],["lo","లో"],["Godavari","గోదావరి"],["Dakshina","దక్షిణ"],["Vahini","వాహిని"],["ga","గా"],["pravahisthundi","ప్రవహిస్తుంది"]] },
       { "pause": 0, "words": [["anduke","అందుకే"],["ikkada","ఇక్కడ"],["snanam","స్నానం"],["entho","ఎంతో"],["punyam.","పుణ్యం"]] }
     ]},
     { "id": 15, "rate": 1.0, "phrases": [

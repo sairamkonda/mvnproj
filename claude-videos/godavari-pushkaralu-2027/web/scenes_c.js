@@ -84,7 +84,9 @@ function barricades(S, x0, x1, z, y) {
   }
 }
 
-// ---------- 14: Dharmapuri, river bending north ----------
+// ---------- 14: Dharmapuri, where the Godavari turns to flow south (Dakshina Vahini) ----------
+// Built with the river's course mirrored, then flipped in x at the end: the water comes from the
+// north (far), flows south toward the viewer past the ghat, then turns east (screen right).
 const S14 = (h) => {
   const S = base({ ...SKIES.sunrise, sunDir: [-0.45, 0.14, -1] }, { shadowSize: 70 });
   aimSun(S.world, v3(4, 0, -8), 80);
@@ -114,22 +116,25 @@ const S14 = (h) => {
   }
   for (let i = 0; i < 50; i++) spots.push({ p: onGhat(-10 + r() * 20, -0.5 - r() * 7, 1.6) });
   S.scene.add(makeCrowd(spots, { seed: 15 }));
-  // flow chevrons that follow the river and turn north
+  // flow chevrons: they run from the far (north) end toward the viewer, i.e. southward at the ghat
   const chevGeo = (() => { const s = new THREE.Shape(); s.moveTo(0, -0.7); s.lineTo(1.1, 0.5); s.lineTo(0.75, 0.75); s.lineTo(0, 0); s.lineTo(-0.75, 0.75); s.lineTo(-1.1, 0.5); s.closePath(); const g = new THREE.ShapeGeometry(s); g.rotateX(-Math.PI / 2); g.rotateY(Math.PI); return g; })();
   const NCH = 16, chev = new THREE.InstancedMesh(chevGeo, new THREE.MeshBasicMaterial({ color: 0x9be7ff, transparent: true, opacity: 0.85, depthWrite: false }), NCH);
   S.scene.add(chev);
   const sub = (u) => lerp(0.22, 0.62, u);
   const m4 = new THREE.Matrix4(), q = new THREE.Quaternion();
-  const bend = v3(1.6, 0.4, -7);
-  const camKeys = [[0, v3(-30, 17, 28)], [h.dur * 0.55, v3(-12, 11, 16)], [h.dur, v3(-7, 6.5, 12)]];
-  const tgtKeys = [[0, v3(-10, 0, 4)], [h.dur * 0.55, v3(2, 0, -9)], [h.dur, v3(14, 3.2, -8)]];
+  const bend = v3(-1.6, 0.4, -7); // world coordinates, after the mirror
+  const camKeys = [[0, v3(30, 17, 28)], [h.dur * 0.55, v3(12, 11, 16)], [h.dur, v3(7, 6.5, 12)]];
+  const tgtKeys = [[0, v3(10, 0, 4)], [h.dur * 0.55, v3(-2, 0, -9)], [h.dur, v3(-14, 3.2, -8)]];
+  const root = new THREE.Group(); root.scale.x = -1;
+  [...S.scene.children].forEach((c) => root.add(c));
+  S.scene.add(root);
   return {
     ...S,
     update(t) {
       S.tick(t);
       for (let i = 0; i < NCH; i++) {
-        const u = ((i / NCH) + t * 0.05) % 1;
-        const p = center.getPointAt(sub(u)), tg = center.getTangentAt(sub(u));
+        const u = (((i / NCH) - t * 0.05) % 1 + 1) % 1;
+        const p = center.getPointAt(sub(u)), tg = center.getTangentAt(sub(u)).negate();
         q.setFromUnitVectors(v3(0, 0, -1), tg.setY(0).normalize());
         m4.compose(p.setY(0.18), q, v3(1, 1, 1).multiplyScalar(Math.sin(Math.PI * u) * 1.1));
         chev.setMatrixAt(i, m4);
@@ -137,7 +142,7 @@ const S14 = (h) => {
       chev.instanceMatrix.needsUpdate = true;
       look(S.camera, kf(t, camKeys), kf(t, tgtKeys));
     },
-    callouts: [{ kind: 'label', text: 'UTTARA VAHINI', at: bend, show: [h.word(4) - 0.1, 1e9], bg: 'rgba(14,80,140,0.9)', border: '#9be7ff', size: 46 }],
+    callouts: [{ kind: 'label', text: 'DAKSHINA VAHINI', at: bend, show: [h.word(4) - 0.1, 1e9], bg: 'rgba(14,80,140,0.9)', border: '#9be7ff', size: 46 }],
   };
 };
 
